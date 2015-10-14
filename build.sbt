@@ -5,7 +5,12 @@ android.Plugin.androidBuild
 
 platformTarget in Android := "android-18"
 
-javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
+javaOptions ++= Seq(
+  "-source", "1.7", "-target", "1.7",
+  "-Xmx512M",
+  "-Xmx1024M",
+  "-XX:MaxPermSize=1024M"
+)
 scalaVersion := "2.11.7"
 scalacOptions in Compile += "-feature"
 
