@@ -31,6 +31,10 @@
     ```
     http://qiita.com/mapyo/items/047df6ff0ffc332dd558
     ```
+  - Windows
+    - ANDROID_HOME(android-sdkのパス)が環境変数に追加されていること。
+      - インストール時にSDKのインストール場所を個人で設定していない場合、隠しフォルダにインストールされるため注意。
+    - javaは現時点で最新のものを入れることとする。
 
 - 必要なPlugin
     - scala
