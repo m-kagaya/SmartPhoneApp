@@ -1,28 +1,18 @@
 package scaloid.main
 
 import org.scaloid.common._
+import scaloid.main._
 import android.graphics.Color
-import scaloid.example.R.string
 
 class HelloScaloid extends SActivity {
-  lazy val meToo = new STextView("Me too")
-
   onCreate {
-    contentView = new SVerticalLayout {
-      style {
-        case b: SButton => b.textColor(Color.RED).onClick(meToo.text = "PRESSED")
-        case t: STextView => t textSize 10.dip
-        case e: SEditText => e.backgroundColor(Color.YELLOW).textColor(Color.BLACK)
-      }
-      STextView("I am 10 dip tall")
-      meToo.here
-      STextView("I am 15 dip tall") textSize 15.dip // overriding
-      new SLinearLayout {
-        STextView("Button: ")
-        SButton(string.red)
-      }.wrap.here
-      SEditText("Yellow input field fills the space").fill
-    } padding 20.dip
+    contentView = new SRelativeLayout {
+
+      SButton(R.string.start_btn).<<.wrap.marginBottom(119.dip).centerHorizontal.alignParentBottom.>>
+      STextView(R.string.start_text).<<.wrap.marginTop(76.dip).centerHorizontal.alignParentTop.>>
+
+    }
+
   }
 
 }
